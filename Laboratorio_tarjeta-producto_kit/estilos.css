@@ -10,13 +10,27 @@ body {
 
 .catalogo {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 16px;
   max-width: 900px;
+  justify-content: center;
+  align-items: stretch;
+  margin: 0 auto;
 }
 
 /* PASO 3 · Aquí la página le entrega al componente el color de tu marca.
    Cambia el valor por el color de tu emprendimiento. */
-tarjeta-producto {
-  --color-marca: #2F6B45;
+selector-raza {
+  --color-marca: #e67e22;;
+}
+
+/*Responsive celulares*/
+@media (max-width: 600px) {
+  body {
+    padding: 16px;
+  }
+
+  .catalogo {
+    gap: 16px;
+  }
 }

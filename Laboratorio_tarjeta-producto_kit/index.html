@@ -8,34 +8,32 @@
 
   <!-- PASO 1 · La página solo importa el módulo del componente.
        Ábrela con Live Server: los módulos no cargan con file:// -->
-  <script type="module" src="./componentes/tarjeta-producto.js"></script>
 </head>
 <body>
   <!-- Cambia el título por el nombre de tu emprendimiento -->
-  <h1>Nombre de tu emprendimiento</h1>
-
+  <h1>Animales en accion</h1>
   <!-- PASO 4 · Usa la tarjeta tres veces con productos REALES de tu emprendimiento:
        cambia la foto, el nombre, la descripción y el precio de cada una. -->
   <main class="catalogo">
 
-    <tarjeta-producto precio="0">
-      <img slot="foto" src="./img/producto-1.svg" alt="Describe la foto del producto 1">
-      <h3 slot="nombre">Producto 1</h3>
-      <p>Descripción corta del producto 1</p>
-    </tarjeta-producto>
+  <selector-raza tamano="pequeno" precio="15">
+    <img slot="foto" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFKBYSSTgJLpuG7JsVV44u385xhCI2FIip5UuehQGFGI7iaR70x2sfMArl&s=10">
+    <h3 slot="nombre">Raza pequeña</h3>
+    <p>Perros de hasta 10 kg.</p>
+    <button slot="boton" disabled>Elegir</button>
+  </selector-raza>
 
-    <tarjeta-producto precio="0">
-      <img slot="foto" src="./img/producto-2.svg" alt="Describe la foto del producto 2">
-      <h3 slot="nombre">Producto 2</h3>
-      <p>Descripción corta del producto 2</p>
-    </tarjeta-producto>
+  <selector-raza tamano="mediano" precio="20" destacado>
+    <img slot="foto" src="https://static.vecteezy.com/system/resources/previews/030/012/303/non_2x/cute-white-schnauzer-standing-in-a-white-studio-floor-photo.jpg" alt="Schnauzer de pie">
+    <h3 slot="nombre">Raza mediana</h3>
+    <p>Perros de 10 a 25 kg.</p>
+    <button slot="boton" disabled>Elegir</button>
+  </selector-raza>
 
-    <tarjeta-producto precio="0">
-      <img slot="foto" src="./img/producto-3.svg" alt="Describe la foto del producto 3">
-      <h3 slot="nombre">Producto 3</h3>
-      <p>Descripción corta del producto 3</p>
-    </tarjeta-producto>
+  <selector-raza tamano="grande" precio="28"><img slot="foto" src="https://www.purina.es/sites/default/files/styles/ttt_image_510/public/2024-02/sitesdefaultfilesstylessquare_medium_440x440public2022-09flatcoated20retriever.jpg?itok=RBKTGGnh" alt="Golden Retriever en el parque"><h3 slot="nombre">Raza grande</h3> <button slot="boton" disabled>Elegir</button> </selector-raza>
 
-  </main>
+</main>
+  <script type="module" src="./componentes/selector-raza.js"></script>
+
 </body>
 </html>
