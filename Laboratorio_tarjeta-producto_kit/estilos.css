@@ -20,8 +20,8 @@ body {
 
 /* PASO 3 · Aquí la página le entrega al componente el color de tu marca.
    Cambia el valor por el color de tu emprendimiento. */
-tarjeta-producto {
-  --color-marca: #2F6B45;
+selector-raza {
+  --color-marca: #e67e22;;
 }
 
 /*Responsive celulares*/
