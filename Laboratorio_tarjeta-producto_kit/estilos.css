@@ -8,6 +8,13 @@ body {
   color: #1F2A24;
 }
 
+/* cambio: main no es grilla; las secciones van una debajo de otra */
+main{
+  display: block;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .catalogo {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -18,11 +25,29 @@ body {
   margin: 0 auto;
 }
 
+h1,
+h2 {
+  text-align: center;
+}
+
+.seccion {
+  width: 100%; /* cambio: cada sección ocupa todo el ancho */
+  max-width: 1200px;
+  margin: 0 auto 48px auto;
+}
 /* PASO 3 · Aquí la página le entrega al componente el color de tu marca.
    Cambia el valor por el color de tu emprendimiento. */
-selector-raza {
-  --color-marca: #e67e22;;
+calendario-citas {
+  display: block;
+  max-width: 480px;
+  margin: 0 auto;
+  --color-marca:#e67e22;
 }
+
+selector-raza {
+  --color-marca: #e67e22;
+}
+
 
 /*Responsive celulares*/
 @media (max-width: 600px) {
