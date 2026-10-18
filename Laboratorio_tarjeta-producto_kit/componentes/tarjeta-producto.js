@@ -1,6 +1,6 @@
 // componentes/tarjeta-producto.js
 // Práctica de laboratorio · Construye <tarjeta-producto> (Actividad 8 de las diapositivas)
-// Completa cada PASO. Los números son los mismos de la diapositiva y de la tarea en Moodle.
+// Animales en Acción · Peluquería canina · Atleta 1
 
 // ───────── PASO 2 · Plantilla con Shadow DOM y slots ─────────
 // Una sola plantilla, declarada fuera de la clase.
@@ -55,4 +55,5 @@ export class TarjetaProducto extends HTMLElement {
 }
 
 // ───────── PASO 1 · Registra el componente ─────────
-// Escribe aquí customElements.define(...) con una etiqueta que tenga guion.
+// La etiqueta lleva guion, como exige el estándar de Custom Elements.
+customElements.define("tarjeta-producto", TarjetaProducto);

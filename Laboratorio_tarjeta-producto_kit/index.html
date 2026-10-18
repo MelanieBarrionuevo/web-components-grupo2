@@ -3,39 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Práctica de laboratorio · tarjeta-producto</title>
+  <title>Animales en Acción · Peluquería canina</title>
   <link rel="stylesheet" href="./estilos.css">
 
-  <!-- PASO 1 · La página solo importa el módulo del componente.
-       Ábrela con Live Server: los módulos no cargan con file:// -->
+  <!-- PASO 1 · La página solo importa los módulos de los componentes.
+       Ábrela con Live Server: los módulos no cargan con file://
+       Cada integrante del equipo tiene su propio módulo. -->
   <script type="module" src="./componentes/tarjeta-producto.js"></script>
+  <script type="module" src="./componentes/selector-raza.js"></script>
+  <script type="module" src="./componentes/calendario-citas.js"></script>
+  <script type="module" src="./componentes/resumen-cotizacion.js"></script>
 </head>
 <body>
-  <!-- Cambia el título por el nombre de tu emprendimiento -->
-  <h1>Nombre de tu emprendimiento</h1>
+  <header class="encabezado">
+    <h1>Animales en Acción</h1>
+    <p>Peluquería canina con reserva en línea: elige el servicio, la raza de tu perro y tu turno.</p>
+  </header>
 
-  <!-- PASO 4 · Usa la tarjeta tres veces con productos REALES de tu emprendimiento:
-       cambia la foto, el nombre, la descripción y el precio de cada una. -->
-  <main class="catalogo">
+  <main>
+    <!-- ===== ATLETA 1 · tarjetas ===== -->
+    <!-- PASO 4 · La tarjeta se usa con servicios REALES del emprendimiento. -->
+    <section class="seccion">
+      <h2>1. Elige un servicio</h2>
+      <div class="catalogo">
 
-    <tarjeta-producto precio="0">
-      <img slot="foto" src="./img/producto-1.svg" alt="Describe la foto del producto 1">
-      <h3 slot="nombre">Producto 1</h3>
-      <p>Descripción corta del producto 1</p>
-    </tarjeta-producto>
+        <tarjeta-producto precio="12" destacado>
+          <img slot="foto" src="./img/bano-completo.svg" alt="Perro cubierto de espuma dentro de una tina durante el baño">
+          <h3 slot="nombre">Baño Completo</h3>
+          <p>Baño hipoalergénico, secado, cepillado y perfume.</p>
+        </tarjeta-producto>
 
-    <tarjeta-producto precio="0">
-      <img slot="foto" src="./img/producto-2.svg" alt="Describe la foto del producto 2">
-      <h3 slot="nombre">Producto 2</h3>
-      <p>Descripción corta del producto 2</p>
-    </tarjeta-producto>
+        <tarjeta-producto precio="25">
+          <img slot="foto" src="./img/corte-de-raza.svg" alt="Tijeras de peluquería junto a un perro recién cortado">
+          <h3 slot="nombre">Corte de Raza</h3>
+          <p>Corte con tijera y máquina según la raza, incluye baño.</p>
+        </tarjeta-producto>
 
-    <tarjeta-producto precio="0">
-      <img slot="foto" src="./img/producto-3.svg" alt="Describe la foto del producto 3">
-      <h3 slot="nombre">Producto 3</h3>
-      <p>Descripción corta del producto 3</p>
-    </tarjeta-producto>
+        <tarjeta-producto precio="18">
+          <img slot="foto" src="./img/deslanado.svg" alt="Cepillo deslanador retirando pelo muerto de un perro de doble manto">
+          <h3 slot="nombre">Deslanado</h3>
+          <p>Retira pelo muerto en razas de doble manto.</p>
+        </tarjeta-producto>
 
+        <!-- Sin descripción a propósito: se ve el texto de respaldo "Sin descripción".
+             Va todo pegado, sin espacios ni saltos de línea entre etiquetas,
+             porque un espacio también cuenta como contenido del slot. -->
+        <tarjeta-producto precio="8"><img slot="foto" src="./img/spa-de-patitas.svg" alt="Patita de perro recibiendo hidratación en las almohadillas"><h3 slot="nombre">Spa de Patitas</h3></tarjeta-producto>
+
+      </div>
+    </section>
+    <!-- ===== FIN ATLETA 1 ===== -->
+
+    <!-- ===== ATLETA 2 · selector-raza ===== -->
+    <!-- ===== FIN ATLETA 2 ===== -->
+
+    <!-- ===== ATLETA 3 · calendario-citas ===== -->
+    <!-- ===== FIN ATLETA 3 ===== -->
+
+    <!-- ===== ATLETA 4 · resumen-cotizacion ===== -->
+    <!-- ===== FIN ATLETA 4 ===== -->
   </main>
+
+  <footer class="pie">
+    <p>Animales en Acción · Programación Integrativa de Componentes Web</p>
+  </footer>
 </body>
 </html>
