@@ -3,9 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Práctica de laboratorio · tarjeta-producto</title>
+  <title>Animales en Acción</title>
   <link rel="stylesheet" href="./estilos.css">
 
+  <!-- IMPORTACIÓN DE LOS MÓDULOS -->
+  <script type="module" src="./componentes/tarjeta-producto.js"></script>
+  
+  <!-- ¡AGREGA ESTA LÍNEA! Es la importación de tu componente -->
+  <script type="module" src="./componentes/calendario-citas.js"></script>
+</head>
+<body>
+  <h1>Peluquería Animales en Acción</h1>
+
+  <main class="catalogo">
+    <!-- Aquí están las tarjetas del Atleta 1... -->
+    <tarjeta-producto precio="12">
+      <img slot="foto" src="./img/producto-1.svg" alt="...">
+      <h3 slot="nombre">Baño Completo</h3>
+      <p>Baño hipoalergénico, secado, cepillado y perfume</p>
+    </tarjeta-producto>
+    
+    <!-- ... asumiendo que están las otras tarjetas ... -->
+  </main>
+
+  <hr>
+
+  <!-- AQUÍ PONES TU PARTE COMO ATLETA 3 -->
+  <section>
+    <h2>Reserva tu turno</h2>
+    
+    <!-- ===== ATLETA 3 calendario-citas ===== -->
+    <calendario-citas fecha="2026-10-20">
+        <span slot="titulo">📅 ¿Cuándo nos visitas?</span>
+    </calendario-citas>
+    <!-- ===== FIN ATLETA 3 ===== -->
+  </section>
   <!-- PASO 1 · La página solo importa el módulo del componente.
        Ábrela con Live Server: los módulos no cargan con file:// -->
 </head>
