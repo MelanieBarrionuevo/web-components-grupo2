@@ -8,34 +8,33 @@
 
   <!-- PASO 1 · La página solo importa el módulo del componente.
        Ábrela con Live Server: los módulos no cargan con file:// -->
-  <script type="module" src="./componentes/tarjeta-producto.js"></script>
 </head>
 <body>
   <!-- Cambia el título por el nombre de tu emprendimiento -->
-  <h1>Nombre de tu emprendimiento</h1>
-
+  <h1>Animales en accion</h1>
   <!-- PASO 4 · Usa la tarjeta tres veces con productos REALES de tu emprendimiento:
        cambia la foto, el nombre, la descripción y el precio de cada una. -->
   <main class="catalogo">
 
-    <tarjeta-producto precio="0">
-      <img slot="foto" src="./img/producto-1.svg" alt="Describe la foto del producto 1">
-      <h3 slot="nombre">Producto 1</h3>
-      <p>Descripción corta del producto 1</p>
-    </tarjeta-producto>
+  <selector-raza tamano="pequeno" precio="15">
+    <img slot="foto" src="./img/pequeno.jpg" alt="Caniche toy sentado">
+    <h3 slot="nombre">Raza pequeña</h3>
+    <p>Perros de hasta 10 kg.</p>
+    <button slot="boton" disabled>Elegir</button>
+  </selector-raza>
 
-    <tarjeta-producto precio="0">
-      <img slot="foto" src="./img/producto-2.svg" alt="Describe la foto del producto 2">
-      <h3 slot="nombre">Producto 2</h3>
-      <p>Descripción corta del producto 2</p>
-    </tarjeta-producto>
+  <selector-raza tamano="mediano" precio="20" destacado>
+    <img slot="foto" src="./img/mediano.jpg" alt="Schnauzer de pie">
+    <h3 slot="nombre">Raza mediana</h3>
+    <p>Perros de 10 a 25 kg.</p>
+    <button slot="boton" disabled>Elegir</button>
+  </selector-raza>
 
-    <tarjeta-producto precio="0">
-      <img slot="foto" src="./img/producto-3.svg" alt="Describe la foto del producto 3">
-      <h3 slot="nombre">Producto 3</h3>
-      <p>Descripción corta del producto 3</p>
-    </tarjeta-producto>
+  <!-- Sin descripción y en una sola línea: muestra "Sin descripción" -->
+  <selector-raza tamano="grande" precio="28"><img slot="foto" src="./img/grande.jpg" alt="Golden Retriever en el parque"><h3 slot="nombre">Raza grande</h3> <button slot="boton" disabled>Elegir</button> > </selector-raza>
 
-  </main>
+</main>
+  <script type="module" src="./componentes/selector-raza.js"></script>
+
 </body>
 </html>
