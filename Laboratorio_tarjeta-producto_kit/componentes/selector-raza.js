@@ -34,7 +34,7 @@ plantilla.innerHTML = `
     /*Paso 3*/
     ::slotted(img) {
       width: 100%;
-      height: 200px;
+      height: 240px;
       object-fit: cover;
       border-radius: 8px;
     }
@@ -109,8 +109,7 @@ plantilla.innerHTML = `
       opacity: 0.4;
       cursor: not-allowed;
     }
-
-
+      
   </style>
 
   <!-- PASO 2 · Escribe aquí:
