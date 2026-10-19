@@ -208,12 +208,21 @@ export class SelectorRaza extends HTMLElement {
       boton.textContent = nombreRaza;
       boton.dataset.raza = nombreRaza;
       boton.addEventListener("click", () => {
+        this.limpiarOtras();
         this.raza = nombreRaza; 
       });
       contenedor.append(boton);
     }
   }
  
+  limpiarOtras() {
+    document.querySelectorAll("selector-raza").forEach((tarjeta) => {
+      if (tarjeta !== this) {
+        tarjeta.removeAttribute("raza");
+      }
+    });
+  }
+
   actualizar() {
     // Si el atributo viene en el HTML, esto corre antes que connectedCallback:
     // se comprueba que la plantilla ya esté clonada.
