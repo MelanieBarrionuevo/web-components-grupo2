@@ -15,6 +15,27 @@
   <h1>Peluquería Animales en Acción</h1>
 
   <main>
+    <section class="seccion">
+      <h2>Elige tu servicio</h2>
+
+      <div class="catalogo">
+        <tarjeta-producto precio="12" destacado>
+          <img slot="foto" src="./img/bano-completo.jpg" alt="Perro recibiendo un baño con espuma">
+          <h3 slot="nombre">Baño Completo</h3>
+          <p>Baño con champú hipoalergénico, secado y cepillado.</p>
+        </tarjeta-producto>
+
+        <tarjeta-producto precio="25">
+          <img slot="foto" src="./img/corte-de-raza.jpg" alt="Caniche con corte de raza terminado">
+          <h3 slot="nombre">Corte de Raza</h3>
+          <p>Corte con tijera y máquina según la raza. Incluye baño.</p>
+        </tarjeta-producto>
+
+        <tarjeta-producto precio="8"><img slot="foto" src="./img/spa-de-patitas.jpg" alt="Patas de perro con uñas recién cortadas"><h3 slot="nombre">Spa de Patitas</h3></tarjeta-producto>
+      </div>
+    </section>
+
+    <section>
     <h2>Selecciona la raza de tu mascota</h2>
     <div class="catalogo">
       <selector-raza tamano="pequeno" precio="15">
@@ -40,7 +61,7 @@
         <h3 slot="nombre">Raza grande</h3> <button slot="boton" disabled>Elegir</button>
       </selector-raza>
     </div>
-
+    </section>
     <br>
     <br>
 
@@ -63,6 +84,7 @@
   <script type="module" src="./componentes/selector-raza.js"></script>
   <script type="module" src="./componentes/calendario-citas.js"></script>
   <script type="module" src="./componentes/resumen-cotizacion.js"></script>
+  <script type="module" src="./componentes/tarjeta-producto.js"></script>
 </body>
 
 </html>
