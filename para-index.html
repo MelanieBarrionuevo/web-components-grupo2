@@ -1,0 +1,47 @@
+<!-- ===== 1) En el <head> ===== -->
+<script type="module" src="./componentes/tarjeta-producto.js"></script>
+
+
+<!-- ===== 2) En el <body>, en el bloque de ATLETA 1 ===== -->
+<!-- ===== ATLETA 1 · tarjetas ===== -->
+<section class="seccion">
+  <h2>Elige un servicio</h2>
+  <div class="catalogo">
+
+    <tarjeta-producto precio="12" destacado>
+      <img slot="foto" src="./img/bano-completo.jpg" alt="Cachorro golden cubierto de espuma con un patito de hule en la cabeza">
+      <h3 slot="nombre">Baño Completo</h3>
+      <p>Baño hipoalergénico, secado, cepillado y perfume.</p>
+    </tarjeta-producto>
+
+    <tarjeta-producto precio="25">
+      <img slot="foto" src="./img/corte-de-raza.jpg" alt="Schnauzer gris recibiendo un corte con tijeras de peluquería">
+      <h3 slot="nombre">Corte de Raza</h3>
+      <p>Corte con tijera y máquina según la raza, incluye baño.</p>
+    </tarjeta-producto>
+
+    <tarjeta-producto precio="18">
+      <img slot="foto" src="./img/deslanado.jpg" alt="Golden retriever sobre una mesa mientras le pasan un cepillo deslanador">
+      <h3 slot="nombre">Deslanado</h3>
+      <p>Retira pelo muerto en razas de doble manto.</p>
+    </tarjeta-producto>
+
+    <!-- Sin descripción a propósito (muestra "Sin descripción"). Va en una sola línea, sin espacios. -->
+    <tarjeta-producto precio="8"><img slot="foto" src="./img/spa-de-patitas.jpg" alt="Perrito con una toalla en la cabeza mientras le limpian las uñas de la patita"><h3 slot="nombre">Spa de Patitas</h3></tarjeta-producto>
+
+  </div>
+</section>
+<!-- ===== FIN ATLETA 1 ===== -->
+
+
+<!-- ===== 3) En estilos.css (si aún no existe) ===== -->
+<!--
+.catalogo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+tarjeta-producto {
+  --color-marca: #2A9D8F;
+}
+-->
