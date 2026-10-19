@@ -41,18 +41,28 @@
       </selector-raza>
     </div>
 
+    <br>
+    <br>
 
-    <section>
-      <h2>Reserva tu turno</h2>
+    <div class="fila-reserva">
 
-      <calendario-citas fecha="2026-10-20">
-        <span slot="titulo">📅 ¿Cuándo nos visitas?</span>
-      </calendario-citas>
-    </section>
+      <section class="seccion">
+        <h2>Reserva tu turno</h2>
+        <calendario-citas fecha="2026-10-20">
+          <span slot="titulo">📅 ¿Cuándo nos visitas?</span>
+        </calendario-citas>
+      </section>
+
+      <section class="seccion">
+        <resumen-cotizacion></resumen-cotizacion>
+      </section>
+      
+    </div>
 
   </main>
   <script type="module" src="./componentes/selector-raza.js"></script>
   <script type="module" src="./componentes/calendario-citas.js"></script>
+  <script type="module" src="./componentes/resumen-cotizacion.js"></script>
 </body>
 
 </html>

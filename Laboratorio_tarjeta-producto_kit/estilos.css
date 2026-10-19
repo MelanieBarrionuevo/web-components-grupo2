@@ -1,5 +1,12 @@
 /* estilos.css · estilos de la PÁGINA (no del componente) */
 
+/* PASO 3 · Aquí la página le entrega a TODOS los componentes el color de la marca.
+   cambio: se declara una sola vez en :root y llega a selector-raza,
+   calendario-citas y resumen-cotizacion */
+:root {
+  --color-marca: #e67e22;
+}
+
 body {
   font-family: system-ui, Arial, sans-serif;
   margin: 0;
@@ -35,19 +42,33 @@ h2 {
   max-width: 1200px;
   margin: 0 auto 48px auto;
 }
-/* PASO 3 · Aquí la página le entrega al componente el color de tu marca.
-   Cambia el valor por el color de tu emprendimiento. */
+
+.fila-reserva {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.fila-reserva .seccion {
+  margin: 0;
+}
+
+.fila-reserva calendario-citas {
+  max-width: none;
+}
+
+/* cambio: se quitó --color-marca de aquí, ya viene de :root */
 calendario-citas {
   display: block;
   max-width: 480px;
   margin: 0 auto;
-  --color-marca:#e67e22;
 }
 
-selector-raza {
-  --color-marca: #e67e22;
-}
-
+/* cambio: se quitaron las reglas de selector-raza y resumen-cotizacion,
+   que solo tenían --color-marca */
 
 /*Responsive celulares*/
 @media (max-width: 600px) {
@@ -57,5 +78,9 @@ selector-raza {
 
   .catalogo {
     gap: 16px;
+  }
+
+  .fila-reserva {
+    grid-template-columns: 1fr;
   }
 }
