@@ -1,86 +1,198 @@
 /* estilos.css · estilos de la PÁGINA (no del componente) */
 
-/* PASO 3 · Aquí la página le entrega a TODOS los componentes el color de la marca.
-   cambio: se declara una sola vez en :root y llega a selector-raza,
-   calendario-citas y resumen-cotizacion */
+/* PASO 3 · La página entrega a TODOS los componentes el color de la marca.
+   Se declara una sola vez en :root. */
 :root {
   --color-marca: #e67e22;
+
+  /* Colores de la página */
+  --marca-oscuro: #b85f12;
+  --fondo: #fbf7f2;
+  --superficie: #ffffff;
+  --texto: #2b2420;
+  --texto-suave: #7a6e66;
+  --radio: 20px;
+  --sombra: 0 10px 30px rgba(43, 36, 32, 0.06);
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
-  font-family: system-ui, Arial, sans-serif;
   margin: 0;
-  padding: 24px;
-  background: #F2F3EF;
-  color: #1F2A24;
+  font-family: 'Nunito', system-ui, Arial, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+  line-height: 1.5;
 }
 
-/* cambio: main no es grilla; las secciones van una debajo de otra */
-main{
+/* ───────── Encabezado ───────── */
+.encabezado {
+  background: linear-gradient(135deg, var(--color-marca), var(--marca-oscuro));
+  color: #fff;
+  text-align: center;
+  padding: 48px 24px 88px;
+}
+
+.logo {
+  font-size: 2.6rem;
+}
+
+.encabezado h1 {
+  margin: 8px 0 4px;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.encabezado p {
+  margin: 0;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Pasos del proceso: 1 Servicio · 2 Raza · 3 Turno · 4 Confirma */
+.pasos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: paso;
+}
+
+.pasos li {
+  counter-increment: paso;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.pasos li::before {
+  content: counter(paso) " · ";
+  font-weight: 800;
+}
+
+/* ───────── Contenido ───────── */
+main {
   display: block;
   max-width: 1200px;
-  margin: 0 auto;
-}
-
-.catalogo {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 16px;
-  max-width: 900px;
-  justify-content: center;
-  align-items: stretch;
-  margin: 0 auto;
-}
-
-h1,
-h2 {
-  text-align: center;
+  margin: -56px auto 0;   /* sube sobre el encabezado */
+  padding: 0 24px 48px;
 }
 
 .seccion {
-  width: 100%; /* cambio: cada sección ocupa todo el ancho */
-  max-width: 1200px;
-  margin: 0 auto 48px auto;
+  width: 100%;
+  background: var(--superficie);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  padding: 36px 28px;
+  margin: 0 auto 32px;
 }
 
+.titulo-seccion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 0 6px;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.numero {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--color-marca);
+  color: #fff;
+  font-size: 1rem;
+}
+
+.subtitulo {
+  margin: 0 0 28px;
+  text-align: center;
+  color: var(--texto-suave);
+}
+
+/* Grilla de tarjetas: se acomoda sola según el ancho */
+.catalogo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+/* Turno a la izquierda, resumen a la derecha */
 .fila-reserva {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 32px;
-  max-width: 1000px;
-  margin: 0 auto;
   align-items: start;
 }
 
 .fila-reserva .seccion {
   margin: 0;
+  height: 100%;
 }
 
-.fila-reserva calendario-citas {
-  max-width: none;
+.fila-reserva .titulo-seccion {
+  margin-bottom: 24px;
 }
 
-/* cambio: se quitó --color-marca de aquí, ya viene de :root */
-calendario-citas {
+calendario-citas,
+resumen-cotizacion {
   display: block;
-  max-width: 480px;
-  margin: 0 auto;
 }
 
-/* cambio: se quitaron las reglas de selector-raza y resumen-cotizacion,
-   que solo tenían --color-marca */
+/* ───────── Pie de página ───────── */
+.pie {
+  text-align: center;
+  color: var(--texto-suave);
+  padding: 24px 16px 40px;
+  font-size: 0.95rem;
+}
 
-/*Responsive celulares*/
+/* ───────── Responsive ───────── */
+
+/* Tablet: turno y resumen uno debajo del otro */
+@media (max-width: 900px) {
+  .fila-reserva {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Celular */
 @media (max-width: 600px) {
-  body {
-    padding: 16px;
+  .encabezado {
+    padding: 36px 16px 72px;
+  }
+
+  main {
+    padding: 0 12px 32px;
+  }
+
+  .seccion {
+    padding: 28px 16px;
+  }
+
+  .titulo-seccion {
+    font-size: 1.25rem;
   }
 
   .catalogo {
     gap: 16px;
-  }
-
-  .fila-reserva {
-    grid-template-columns: 1fr;
   }
 }
