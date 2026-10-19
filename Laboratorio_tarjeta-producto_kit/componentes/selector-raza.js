@@ -123,7 +123,7 @@ plantilla.innerHTML = `
     <!--Cambio-->
     <div class="opciones" id="opciones"></div>
     <p class="elegida" id="elegida">Elige la raza de tu perro</p>
-    <p class="precio">Precio: $<span id="precio">0.00</span></p>
+    <p class="precio">Precio del servicio <span id="precio">×1.00</span></p>
     <slot name="boton"></slot>
 `;
 
@@ -220,7 +220,7 @@ export class SelectorRaza extends HTMLElement {
     const span = this.shadowRoot.querySelector("#precio");
     if (!span) return;
  
-    span.textContent = this.precio.toFixed(2);
+    span.textContent = "×" + this.precio.toFixed(2);
  
     const elegida = this.shadowRoot.querySelector("#elegida");
     elegida.textContent = this.raza ? `Raza elegida: ${this.raza}` : "Elige la raza de tu perro";
@@ -243,7 +243,7 @@ export class SelectorRaza extends HTMLElement {
       detail: {
         raza: this.raza,
         tamano: this.getAttribute("tamano"),
-        precio: this.precio
+        factor: this.precio
       },
       bubbles: true,
       composed: true
