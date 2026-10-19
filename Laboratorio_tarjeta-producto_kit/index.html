@@ -1,41 +1,113 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Práctica de laboratorio · tarjeta-producto</title>
+  <title>Animales en Acción · Peluquería canina</title>
+
+  <!-- Tipografía redondeada y amigable -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="./estilos.css">
 
-  <!-- PASO 1 · La página solo importa el módulo del componente.
-       Ábrela con Live Server: los módulos no cargan con file:// -->
+  <!-- PASO 1 · La página importa los módulos de los componentes -->
   <script type="module" src="./componentes/tarjeta-producto.js"></script>
+  <script type="module" src="./componentes/selector-raza.js"></script>
+  <script type="module" src="./componentes/calendario-citas.js"></script>
+  <script type="module" src="./componentes/resumen-cotizacion.js"></script>
 </head>
+
 <body>
-  <!-- Cambia el título por el nombre de tu emprendimiento -->
-  <h1>Nombre de tu emprendimiento</h1>
+  <header class="encabezado">
+    <span class="logo">🐾</span>
+    <h1>Animales en Acción</h1>
+    <p>Peluquería canina · cotiza y agenda en un minuto</p>
 
-  <!-- PASO 4 · Usa la tarjeta tres veces con productos REALES de tu emprendimiento:
-       cambia la foto, el nombre, la descripción y el precio de cada una. -->
-  <main class="catalogo">
+    <ol class="pasos">
+      <li>Servicio</li>
+      <li>Raza</li>
+      <li>Turno</li>
+      <li>Confirma</li>
+    </ol>
+  </header>
 
-    <tarjeta-producto precio="0">
-      <img slot="foto" src="./img/producto-1.svg" alt="Describe la foto del producto 1">
-      <h3 slot="nombre">Producto 1</h3>
-      <p>Descripción corta del producto 1</p>
-    </tarjeta-producto>
+  <main>
+    <!-- Paso 1 · Servicios -->
+    <section class="seccion">
+      <h2 class="titulo-seccion"><span class="numero">1</span> Elige tu servicio</h2>
+      <p class="subtitulo">Precios base para perros pequeños.</p>
 
-    <tarjeta-producto precio="0">
-      <img slot="foto" src="./img/producto-2.svg" alt="Describe la foto del producto 2">
-      <h3 slot="nombre">Producto 2</h3>
-      <p>Descripción corta del producto 2</p>
-    </tarjeta-producto>
+      <div class="catalogo">
+        <tarjeta-producto precio="12" destacado>
+          <img slot="foto" src="./img/bano-completo.jpg" alt="Perro recibiendo un baño con espuma">
+          <h3 slot="nombre">Baño Completo</h3>
+          <p>Baño con champú hipoalergénico, secado y cepillado.</p>
+        </tarjeta-producto>
 
-    <tarjeta-producto precio="0">
-      <img slot="foto" src="./img/producto-3.svg" alt="Describe la foto del producto 3">
-      <h3 slot="nombre">Producto 3</h3>
-      <p>Descripción corta del producto 3</p>
-    </tarjeta-producto>
+        <tarjeta-producto precio="25">
+          <img slot="foto" src="./img/corte-de-raza.jpg" alt="Caniche con corte de raza terminado">
+          <h3 slot="nombre">Corte de Raza</h3>
+          <p>Corte con tijera y máquina según la raza. Incluye baño.</p>
+        </tarjeta-producto>
 
+        <tarjeta-producto precio="18">
+          <img slot="foto" src="./img/deslanado.jpg" alt="Golden retriever sobre una mesa mientras le pasan un cepillo deslanador">
+          <h3 slot="nombre">Deslanado</h3>
+          <p>Retira pelo muerto en razas de doble manto.</p>
+        </tarjeta-producto>
+
+        <!-- Sin descripción y en una sola línea: muestra "Sin descripción" -->
+        <tarjeta-producto precio="8"><img slot="foto" src="./img/spa-de-patitas.jpg" alt="Patas de perro con uñas recién cortadas"><h3 slot="nombre">Spa de Patitas</h3></tarjeta-producto>
+      </div>
+    </section>
+
+    <!-- Paso 2 · Razas -->
+    <section class="seccion">
+      <h2 class="titulo-seccion"><span class="numero">2</span> Selecciona la raza de tu mascota</h2>
+      <p class="subtitulo">El tamaño ajusta el precio del servicio.</p>
+
+      <div class="catalogo">
+        <selector-raza tamano="pequeno" precio="1">
+          <img slot="foto" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFKBYSSTgJLpuG7JsVV44u385xhCI2FIip5UuehQGFGI7iaR70x2sfMArl&s=10" alt="Caniche toy blanco sentado">
+          <h3 slot="nombre">Raza pequeña</h3>
+          <p>Perros de hasta 10 kg.</p>
+          <button slot="boton" disabled>Elegir</button>
+        </selector-raza>
+
+        <selector-raza tamano="mediano" precio="1.25" destacado>
+          <img slot="foto" src="https://static.vecteezy.com/system/resources/previews/030/012/303/non_2x/cute-white-schnauzer-standing-in-a-white-studio-floor-photo.jpg" alt="Schnauzer de pie">
+          <h3 slot="nombre">Raza mediana</h3>
+          <p>Perros de 10 a 25 kg.</p>
+          <button slot="boton" disabled>Elegir</button>
+        </selector-raza>
+
+        <!-- Sin descripción y en una sola línea: muestra "Sin descripción" -->
+        <selector-raza tamano="grande" precio="1.5"><img slot="foto" src="https://www.purina.es/sites/default/files/styles/ttt_image_510/public/2024-02/sitesdefaultfilesstylessquare_medium_440x440public2022-09flatcoated20retriever.jpg?itok=RBKTGGnh" alt="Perro grande de pelo negro en el campo"><h3 slot="nombre">Raza grande</h3><button slot="boton" disabled>Elegir</button></selector-raza>
+      </div>
+    </section>
+
+    <!-- Pasos 3 y 4 · Turno y resumen -->
+    <div class="fila-reserva">
+      <section class="seccion">
+        <h2 class="titulo-seccion"><span class="numero">3</span> Reserva tu turno</h2>
+        <calendario-citas fecha="2026-10-20">
+          <span slot="titulo">📅 ¿Cuándo nos visitas?</span>
+        </calendario-citas>
+      </section>
+
+      <section class="seccion">
+        <h2 class="titulo-seccion"><span class="numero">4</span> Confirma tu cita</h2>
+        <resumen-cotizacion></resumen-cotizacion>
+      </section>
+    </div>
   </main>
+
+  <footer class="pie">
+    <p>🐾 Animales en Acción · Peluquería canina</p>
+  </footer>
 </body>
+
 </html>
