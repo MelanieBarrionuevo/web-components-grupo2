@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="400" height="240">
-<rect width="400" height="240" fill="#2a9d8f"/>
-<g fill="#fff"><ellipse cx="200" cy="120" rx="58" ry="52"/><ellipse cx="146" cy="96" rx="20" ry="38" fill="#e9d8c4"/><ellipse cx="254" cy="96" rx="20" ry="38" fill="#e9d8c4"/></g><circle cx="182" cy="112" r="7" fill="#333"/><circle cx="218" cy="112" r="7" fill="#333"/><ellipse cx="200" cy="135" rx="11" ry="8" fill="#333"/><g stroke="#fff" stroke-width="6" fill="none"><circle cx="300" cy="70" r="14"/><circle cx="300" cy="110" r="14"/><line x1="312" y1="78" x2="360" y2="110"/><line x1="312" y1="102" x2="360" y2="70"/></g>
-<text x="200" y="222" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="700" fill="#ffffff">Corte de Raza</text>
-</svg>
