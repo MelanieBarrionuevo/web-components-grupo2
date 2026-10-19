@@ -106,6 +106,7 @@ export class CalendarioCitas extends HTMLElement {
 
   dibujarHoras(fechaSeleccionada) {
     const contenedor = this.shadowRoot.querySelector("#contenedor-horas");
+    if (!contenedor) return; // cambio: la plantilla aún no está clonada
     contenedor.innerHTML = ""; // Limpiar grid
 
     // Buscar si la fecha seleccionada está en nuestro JSON
